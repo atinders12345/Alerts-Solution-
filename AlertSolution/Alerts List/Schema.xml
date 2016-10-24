@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="Alerts List" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Alerts List" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      
+      
+    <ContentType ID="0x0100d6933b655f1446009da2d48ab5a2c1ee" Name="ListFieldsContentType"><FieldRefs><FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" /><FieldRef ID="{bdead626-022e-46ba-b543-27a1fa55159f}" Name="AlertType" /><FieldRef ID="{ca5f4ea0-ac26-46f8-bbb6-e10c6459ae9f}" Name="StartDate" /><FieldRef ID="{9b9d7302-a227-44c3-809a-9427fa7c2ad3}" Name="EndDate" /></FieldRefs></ContentType><ContentTypeRef ID="0x01">
+        <Folder TargetName="Item" />
+      </ContentTypeRef><ContentTypeRef ID="0x0120" /></ContentTypes>
+    <Fields>
+
+      
+      
+      
+      
+    <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="Alert" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" /><Field Name="AlertType" ID="{bdead626-022e-46ba-b543-27a1fa55159f}" DisplayName="AlertType" Type="Choice" Required="TRUE">
+        <CHOICES>
+          
+          
+          
+       
+        <CHOICE>Green</CHOICE><CHOICE>Orange</CHOICE><CHOICE>Red</CHOICE></CHOICES>
+
+      </Field><Field Name="StartDate" ID="{ca5f4ea0-ac26-46f8-bbb6-e10c6459ae9f}" DisplayName="StartDate" Type="DateTime" Required="TRUE" /><Field Name="EndDate" ID="{9b9d7302-a227-44c3-809a-9427fa7c2ad3}" DisplayName="EndDate" Type="DateTime" Required="TRUE" /></Fields>
+    <Views>
+      
+      
+    
+      
+      
+    
+      <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitleNoMenu"></FieldRef></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="Modified" Ascending="FALSE"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View><View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="AlertType" /><FieldRef Name="StartDate" /><FieldRef Name="EndDate" /></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="ID"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View><View BaseViewID="2" Name="46a30cb4-9a04-4b06-8d24-21e4728fb14a" DisplayName="Active" Type="HTML" WebPartZoneID="Main" SetupPath="pages\viewpage.aspx" Url="Active.aspx">
+        <ViewFields>
+          <FieldRef Name="LinkTitle" /><FieldRef Name="AlertType" /></ViewFields>
+        <!-- Custom Query for Actives-->
+        <Query>
+          <Where>
+            <And>
+              <Leq>
+                <FieldRef Name="StartDate" />
+                <Value IncludeTimeValue="FALSE" Type="DateTime">
+                  <Today />
+                </Value>
+              </Leq>
+              <Geq>
+                <FieldRef Name="EndDate" />
+                <Value IncludeTimeValue="FALSE" Type="DateTime">
+                  <Today />
+                </Value>
+              </Geq>
+            </And>
+          </Where>
+        </Query>
+        
+        
+        
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink><JSLink>clienttemplates.js</JSLink></View>
+      <View BaseViewID="3" Name="14ec357d-f943-49d4-bfe2-d79b22922e67" DisplayName="Inactive" Type="HTML" WebPartZoneID="Main" SetupPath="pages\viewpage.aspx" Url="Inactive.aspx">
+          <ViewFields>
+        <FieldRef Name="LinkTitle" />
+            <FieldRef Name="AlertType" />
+          </ViewFields>
+  <!-- Custom Query for Inactive-->
+        <Query>
+          <Where>
+            <Lt>
+              <FieldRef Name="EndDate" />
+              <Value IncludeTimeValue="False" Type="DateTime">
+                <Today />
+              </Value>
+            </Lt>
+          </Where>
+        </Query>
+        
+        
+        
+        
+        
+        <Toolbar Type="Standard" /><XslLink Default="TRUE">main.xsl</XslLink><JSLink>clienttemplates.js</JSLink></View></Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

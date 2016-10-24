@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="d4e5b391-e090-415e-8ba3-ec8c84657730" solutionId="d4e5b391-e090-415e-8ba3-ec8c84657730" resetWebServer="false" sharePointProductVersion="15.0" name="CW Alerts Noticeboard" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="31e6aa1d-1eb6-482f-8bde-1164a45063a4" />
+    <featureReference itemId="7ab7ff18-3c05-4f9d-a6bc-7d636f1e5449" />
+  </features>
+</package>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="CW Alerts Noticeboard" List="113" Url="_catalogs/wp">
+    <File Path="CW Alerts Noticeboard\CW Alerts Noticeboard Web Part.webpart" Url="CWIntranet_AlertSolution_CW Alerts Noticeboard Web Part.webpart" Type="GhostableInLibrary" >
+      <!-- Places the Web Part in a custom Folder called Coliban Water -->
+      <Property Name="Group" Value="Coliban Water" />
+    </File>
+  </Module>
+</Elements>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="custom" Url="Style Library">
+    <File Path="HTML Resources\alerts-noticeboard.css" Url="Custom/alerts-noticeboard.css" />
+  </Module>
+</Elements>

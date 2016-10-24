@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Alerts Noticeboard" OnQuickLaunch="FALSE" TemplateType="10000" Url="Lists/AlertsList" Description="This library is used for the Alerts Noticeboard feature."></ListInstance>
+</Elements>

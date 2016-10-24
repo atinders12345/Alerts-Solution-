@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{37A4D004-2ACA-4D17-827D-99861267FE72}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlertSolution</RootNamespace>
+    <AssemblyName>AlertSolution</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CW Alerts Noticeboard\CW Alerts Noticeboard Web Part.ascx.cs">
+      <DependentUpon>CW Alerts Noticeboard Web Part.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CW Alerts Noticeboard\CW Alerts Noticeboard Web Part.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CW Alerts Noticeboard Web Part.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ListManagementPageModule\AlertsManagement.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Alerts List\AlertsListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{14e98edf-64c0-4f84-95a2-a8f77d50269f}</SharePointProjectItemId>
+    </None>
+    <None Include="Alerts List\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ba6abe0e-1c82-4cb9-bd2c-7e36ef8fdabf}</SharePointProjectItemId>
+    </None>
+    <None Include="CW Alerts Noticeboard\CW Alerts Noticeboard Web Part.webpart" />
+    <None Include="CW Alerts Noticeboard\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f44c2b60-b5d5-48b7-9cbc-83aa1db4c34b}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\CW Alerts Noticeboard\CW Alerts Noticeboard.feature">
+      <FeatureId>{31e6aa1d-1eb6-482f-8bde-1164a45063a4}</FeatureId>
+    </None>
+    <None Include="Features\CW Alerts Management\CW Alerts Management.feature">
+      <FeatureId>{7ab7ff18-3c05-4f9d-a6bc-7d636f1e5449}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="ListManagementPageModule\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b591cae9-ed52-4d3d-bf87-8d676d4dc129}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{d4e5b391-e090-415e-8ba3-ec8c84657730}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="HTML Resources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{da6c3443-e2b2-436a-8593-71b4a912b09f}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Alerts List\AlertsListInstance\Elements.xml" />
+    <Content Include="Alerts List\Elements.xml" />
+    <Content Include="Alerts List\Schema.xml" />
+    <Content Include="CW Alerts Noticeboard\CW Alerts Noticeboard Web Part.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>CW Alerts Noticeboard Web Part.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="CW Alerts Noticeboard\Elements.xml" />
+    <Content Include="HTML Resources\alerts-noticeboard.css" />
+    <Content Include="Features\CW Alerts Noticeboard\CW Alerts Noticeboard.Template.xml">
+      <DependentUpon>CW Alerts Noticeboard.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\CW Alerts Management\CW Alerts Management.Template.xml">
+      <DependentUpon>CW Alerts Management.feature</DependentUpon>
+    </Content>
+    <Content Include="HTML Resources\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ListManagementPageModule\Elements.xml" />
+    <Content Include="ListManagementPageModule\alertsmanagement.aspx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
